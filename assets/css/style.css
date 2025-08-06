@@ -1,0 +1,743 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body .image-radius {
+  border-radius: 8px;
+}
+
+:root {
+  --nav-bg: #ecfff2;
+  --main-clr: #ab1931;
+  --hamburger-color: #005221;
+  --nav-shadow: 0px 2px var(--main-clr);
+
+  /* ========== Start Primary Green Color ========== */
+  --primary-green-50: #ecfff2;
+  --primary-green-100: #d2ffe4;
+  --primary-green-200: #a8ffca;
+  --primary-green-300: #65ffa4;
+  --primary-green-400: #1bff74;
+  --primary-green-500: #00f951;
+  --primary-green-600: #00d03f;
+  --primary-green-700: #00a235;
+  --primary-green-800: #007e2f;
+  --main-primary-green-900: #005221;
+  --primary-green-950: #003b14;
+  /* ========== End Primary Green Color ============ */
+
+  /* ========== Start Secondary Red Color ========== */
+  --secondary-red-50: #fef2f2;
+  --secondary-red-100: #fee5e5;
+  --secondary-red-200: #fccfd1;
+  --secondary-red-300: #f9a8ac;
+  --secondary-red-400: #f47880;
+  --secondary-red-500: #eb4857;
+  --secondary-red-600: #d7273f;
+  --main-secondary-red-700: #ab1931;
+  --main-secondary-blue: #f1e3cf;
+  --main-primary-blue: #7a1b1a;
+  --secondary-red-800: #981932;
+  --secondary-red-900: #821931;
+  --secondary-red-950: #480916;
+  /* ========== End Secondary Red Color ============ */
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: var(--main-primary-blue);
+  text-transform: uppercase;
+}
+
+.section-padding-top {
+  padding-top: 72px;
+}
+.section-padding-bottom {
+  padding-bottom: 72px;
+}
+
+.section-margin-top {
+  margin-top: 72px;
+}
+
+.section-margin-bottom {
+  margin-bottom: 72px;
+}
+
+.heading-style {
+  display: inline-block;
+  text-transform: uppercase;
+  /* width: 160px; */
+  /* text-align: center; */
+  margin: auto;
+  white-space: nowrap;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.heading-style:before {
+  background-color: var(--main-primary-blue);
+  content: "";
+  display: block;
+  height: 3px;
+  width: 75px;
+  margin-bottom: 5px;
+}
+.heading-style:after {
+  background-color: var(--main-primary-blue);
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  width: 75px;
+  margin-bottom: 0.25em;
+}
+
+/* ========== Start Header ========== */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  padding: 15px 5%;
+  background-color: #fff;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+nav .logo {
+  display: inline-block;
+  width: 62%;
+}
+
+nav .logo img {
+  width: 100%;
+}
+
+nav ul {
+  --padding: 22px;
+  --font-size: 17px;
+
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: var(--font-size);
+  transition: 1s cubic-bezier(0.68, -0.55, 0.27, 10.55);
+}
+
+nav ul li {
+  padding: var(--padding);
+}
+
+ul li a {
+  color: #005221;
+  text-decoration: none;
+  position: relative;
+}
+
+ul li a::after {
+  content: "";
+  width: 0%;
+  height: 1.8px;
+  border-radius: 100px;
+  background: var(--main-clr);
+  position: absolute;
+  bottom: -8%;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  display: none;
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin: 20px 0;
+}
+
+nav .menu span {
+  width: 100%;
+  height: 2px;
+  background: var(--hamburger-color);
+  border-radius: 99px;
+  transition: 0.3s ease;
+  transform-origin: left;
+}
+/* ========== End Header ============ */
+
+/* ========== Start Banner ========== */
+
+.banner {
+  width: 100%;
+  height: auto;
+  padding-top: 100px;
+}
+
+.banner--container {
+  width: 100%;
+  height: auto;
+}
+.banner--container .img {
+  /*position: absolute;
+	top: 5%;
+	z-index: -1;*/
+  width: 100%;
+  height: auto;
+}
+
+.banner--container .banner--mobile.img {
+  display: none;
+}
+
+/* ========== End Banner ============ */
+
+/* ========== Start About Fairpro ========== */
+
+/* ========== Start Date, Time, Address ========== */
+.date-time-address-inner-section .date-time-address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px 16px;
+  background-color: var(--main-secondary-blue);
+  color: var(--main-primary-blue);
+  padding: 2rem;
+}
+
+.date-time-address-inner-section p {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.date-time-address-inner-section .date-time-address.date {
+  border-radius: 8px 0 0 8px;
+}
+.date-time-address-inner-section .date-time-address.time {
+  position: relative;
+  z-index: 0;
+}
+.date-time-address-inner-section .date-time-address.time::before {
+  content: "";
+  border-left: 2px solid var(--main-primary-blue);
+  position: absolute;
+  height: 50%;
+  left: 0;
+  top: 25%;
+}
+.date-time-address-inner-section .date-time-address.time::after {
+  content: "";
+  border-left: 2px solid var(--main-primary-blue);
+  position: absolute;
+  height: 50%;
+  right: 0;
+  top: 25%;
+}
+.date-time-address-inner-section .date-time-address.address {
+  border-radius: 0 8px 8px 0;
+}
+
+.cross-line {
+  width: 2px;
+  height: 24px;
+  background-color: var(--main-primary-blue);
+}
+
+/* ========== End Date, Time, Address ============ */
+
+/* ========== Start Gallery Section ========== */
+.gallery-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: 16px;
+}
+
+.gallery-section .gallery-img {
+  width: 100%;
+  height: auto;
+  /* object-fit : resized to fit its gallery-section */
+  object-fit: cover;
+  object-position: center center;
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
+    rgba(158, 80, 80, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
+    rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  cursor: pointer;
+}
+
+#click-view-gallery {
+  background-color: rgba(15, 18, 22, 0.5);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  display: none;
+}
+
+#click-view-gallery.gallery-img-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-img-close-btn {
+  width: 32px;
+  height: 32px;
+  background-color: var(--secondary-red-200);
+  border-radius: 100%;
+  position: absolute;
+  top: 1%;
+  right: 8px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.reels-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gallery-img-close-btn:after {
+  display: flex;
+  content: "\00d7";
+  color: var(--secondary-red-950);
+  font-size: 48px;
+  line-height: 32px;
+  align-content: center;
+  justify-content: center;
+}
+
+.reel-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.model-img {
+  width: 64%;
+  height: auto;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 680px) {
+  .gallery-section {
+    grid-template-columns: repeat(2, 200px);
+  }
+  .reel-section {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .gallery-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-section .gallery-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ========== End Gallery Section ============ */
+
+/* ========== End About Fairpro ============ */
+
+/* ========== Start Stall Layout ========== */
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0px rgba(211, 47, 47);
+  }
+
+  to {
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+  }
+}
+.stall-layout {
+  background: var(--main-secondary-blue);
+}
+
+.stall--image-layout {
+  display: flex;
+  justify-content: center;
+}
+.stall--image-container {
+  position: relative;
+}
+
+.stall--image.stall-image--mobile {
+  display: none;
+}
+
+.stall--image-container .highlight-points span {
+  display: inline-block;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  border-radius: 100%;
+}
+
+.stall--image-container .highlight-points .point-tooltip {
+  visibility: hidden;
+  width: fit-content;
+  white-space: nowrap;
+  background-color: var(--main-primary-green-900);
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 8px;
+  text-transform: uppercase;
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.stall--image-container .highlight-points:hover .point-tooltip {
+  visibility: visible;
+  display: flex;
+}
+
+.highlight-points.point-1 {
+  position: absolute;
+  top: 28%;
+  left: 26%;
+}
+
+/* ========== End Stall Layout ============ */
+
+/* ========== Start Participants ========== */
+.participants {
+  background-color: var(--main-secondary-blue);
+}
+
+.participants .participants-container {
+  padding: 0 5%;
+}
+.participants .participants-container img {
+  border-radius: 8px;
+}
+
+/* ========== End Participants ============ */
+
+/* ========== Start Footer ========== */
+/* #fixedbutton {
+    position: fixed;
+    bottom: 50px;
+    right: 60px; 	
+	height: 50px;
+	width: 50px;
+	background-color: #003b14;
+} */
+
+.fixed-call-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 50px;
+  width: 40px;
+  background-color: #003b14;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#fixedbutton {
+  height: 20px;
+  object-fit: contain;
+  width: 20px;
+}
+
+footer .footer--container {
+  padding: 60px 0;
+  background-color: #ededed;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul li a {
+  color: var(--primary-green-950);
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+
+footer .footer--social-link {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+footer .footer--social-link a {
+  text-decoration: none;
+}
+
+footer .footer--copyrights {
+  background-color: var(--primary-green-950);
+  color: #fff;
+}
+
+footer .footer--copyrights a {
+  color: #fff;
+}
+
+/* ========== End Footer ============ */
+
+/* ========== Start Media Query ========== */
+
+/* ========== Start 1200 ========== */
+@media screen and (max-width: 1200px) {
+  nav ul li {
+    padding-left: 0;
+  }
+}
+/* ========== End 1200 ============ */
+
+/* ========== Start 910 ========== */
+@media screen and (max-width: 910px) {
+  nav .menu {
+    display: flex;
+  }
+
+  .menu.active span {
+    background: var(--main-clr);
+  }
+
+  .menu.active span:nth-child(1) {
+    transform: rotate(40deg);
+    /* background: blue; */
+  }
+
+  .menu.active span:nth-child(3) {
+    transform-origin: left;
+    transform: rotate(-40deg);
+  }
+
+  .menu.active span:nth-child(2) {
+    /* transform: scale(0); */
+    opacity: 0;
+  }
+
+  nav .logo {
+    display: inline-block;
+    width: 200px;
+    height: auto;
+  }
+
+  nav ul {
+    --height: 0px;
+    flex-direction: column;
+    background: #005221;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 99%;
+    height: var(--height);
+    transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  nav ul.active {
+    --height: calc(
+      (((var(--padding) * 2) + (var(--font-size) * 1.5))) *
+        var(--childrenNumber)
+    );
+    transition: 1s ease;
+    padding-left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    width: 100%;
+    text-transform: capitalize !important;
+    color: #fff;
+  }
+  /* ========== End 910 ============ */
+
+  /* ========== Start 767 ========== */
+  @media screen and (max-width: 769px) {
+    .banner {
+      padding-top: 90px;
+    }
+
+    .fixed-call-btn {
+      bottom: 12px;
+      right: 12px;
+    }
+
+    .banner--container {
+      aspect-ratio: 4/3;
+    }
+    .banner--container .banner--desktop.img {
+      display: none;
+    }
+    .banner--container .banner--mobile.img {
+      display: block;
+    }
+
+    .date-time-address-inner-section .date-time-address.date {
+      border-radius: 8px 8px 0 0;
+    }
+
+    .date-time-address-inner-section .date-time-address.time::before {
+      content: "";
+      border-left: none;
+      border-bottom: 2px solid var(--main-primary-blue);
+      position: absolute;
+      height: auto;
+      width: 25%;
+      left: 40%;
+      top: 0;
+    }
+
+    .date-time-address-inner-section .date-time-address.time::after {
+      content: "";
+      border-left: none;
+      border-bottom: 2px solid var(--main-primary-blue);
+      position: absolute;
+      height: auto;
+      width: 25%;
+      left: 40%;
+      bottom: 0;
+    }
+
+    .date-time-address-inner-section .date-time-address.address {
+      border-radius: 0 0 8px 8px;
+    }
+
+    .fairpro--content .about-credai-content.heading-style {
+      white-space: wrap;
+      width: 17ch;
+    }
+
+    .model-img {
+      width: 90%;
+    }
+  }
+  /* ========== End 767 ============ */
+
+  /* ========== Start 576 ========== */
+  .advantages--image .advantage-image-svg {
+    width: 75px;
+  }
+  /* ========== End 576 ============ */
+
+  /* ========== Start 480 ========== */
+  @media screen and (max-width: 480px) {
+    html {
+      scroll-padding-top: 56px;
+    }
+
+    body .heading-style {
+      font-size: 20px;
+    }
+
+    body h4 {
+      font-size: 19px;
+    }
+
+    body p {
+      font-size: 14px;
+    }
+
+    .section-padding-top {
+      padding-top: 56px;
+    }
+    .section-padding-bottom {
+      padding-bottom: 56px;
+    }
+
+    .section-margin-top {
+      margin-top: 56px;
+    }
+
+    .section-margin-bottom {
+      margin-bottom: 56px;
+    }
+
+    nav ul li {
+      padding-left: 22px;
+    }
+
+    .stall--image.stall-image--desktop {
+      display: none;
+    }
+
+    .stall--image.stall-image--mobile {
+      display: block;
+    }
+
+    .advantages-section {
+      text-align: center;
+    }
+
+    .stall--image-container .highlight-points span {
+      font-weight: 600;
+      font-size: 10px;
+      width: 14px;
+      height: 14px;
+    }
+
+    footer .footer--copyrights {
+      text-align: center;
+    }
+  }
+  /* ========== End 480 ============ */
+}
+
+/* ========== End Media Query ============ */
